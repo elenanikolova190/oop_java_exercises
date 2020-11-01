@@ -1,28 +1,20 @@
 package com.techreturners.cats;
+import java.util.Random;
 
-public class DomesticCat extends MyCats{
-
-    private String setting;
-    private int height;
+public class DomesticCat extends CatObject {
 
     public DomesticCat() {
-        this.setting = "domestic";
-        this.height = 23;
+        super(23, "domestic");
     }
 
     @Override
-    public String getSetting(){
-        return this.setting;
-    }
-    
-    @Override
-    public int getAverageHeight(){
-        return this.height;
+    public String eat() {
+        return getRandomComment();
     }
 
-    @Override
-    public String eat(){
-        return "Purrrrrrr";
+    private static String getRandomComment() {
+        String[] random_comment = {"Purrrrrrr", "It will do I suppose"};
+        int rnd = new Random().nextInt(random_comment.length);
+        return random_comment[rnd];
     }
-
-}
+} 

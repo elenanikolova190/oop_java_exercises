@@ -1,20 +1,19 @@
 package com.techreturners.cats;
-import org.junit.Ignore;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 public class CatTest {
 
     @Test
-    @Ignore
     public void checkCatIsAwake() {
         Cat domesticCat = new DomesticCat();
         assertFalse("Cat should be awake by default", domesticCat.isAsleep());
     }
 
     @Test
-    @Ignore
     public void checkCatCanGoToSleep() {
         Cat domesticCat = new DomesticCat();
         domesticCat.goToSleep();
@@ -22,7 +21,6 @@ public class CatTest {
     }
 
     @Test
-    @Ignore
     public void checkCatCanWakep() {
         Cat domesticCat = new DomesticCat();
         domesticCat.goToSleep();
@@ -31,45 +29,50 @@ public class CatTest {
     }
 
     @Test
-    @Ignore
     public void checkCatSetting() {
         Cat domesticCat = new DomesticCat();
         assertEquals("domestic", domesticCat.getSetting());
     }
 
     @Test
-    @Ignore
+    public void checkCatSettingForLion() {
+        Cat LionCat = new LionCat();
+        assertEquals("wild", LionCat.getSetting());
+    }
+
+    @Test
     public void checkCatHeight() {
         Cat domesticCat = new DomesticCat();
         assertEquals(23, domesticCat.getAverageHeight());
     }
 
     @Test
-    @Ignore
     public void checkLionHeight() {
         Cat lionCat = new LionCat();
         assertEquals(1100, lionCat.getAverageHeight());
     }
 
+    @Test
+    public void checkCheetahHeight() {
+        Cat lionCat = new CheetahCat();
+        assertEquals(900, lionCat.getAverageHeight());
+    }
 
     @Test
-    @Ignore
     public void feedTheLion() {
         Cat lionCat = new LionCat();
         assertEquals("Roar!!!!", lionCat.eat());
     }
 
     @Test
-    @Ignore
     public void feedTheCheetah() {
         Cat cheetahCat = new CheetahCat();
         assertEquals("Zzzzzzz", cheetahCat.eat());
     }
 
     @Test
-    @Ignore
     public void feedTheCat() {
         Cat domesticCat = new DomesticCat();
-        assertEquals("Purrrrrrr", domesticCat.eat());
+        assertTrue(domesticCat.eat().equals("Purrrrrrr") || domesticCat.eat().equals("It will do I suppose"));
     }
 }

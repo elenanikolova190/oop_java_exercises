@@ -1,28 +1,13 @@
 package com.techreturners.cats;
 
-public class LionCat extends MyCats{
-
-    private String setting;
-    private int height;
+public class LionCat extends CatObject {
 
     public LionCat() {
-        this.setting = "wild";
-        this.height = 1100;
+        super(1100, "wild");
     }
 
     @Override
-    public String getSetting(){
-        return this.setting;
-    }
-    
-    @Override
-    public int getAverageHeight(){
-        return this.height;
-    }
-
-    @Override
-    public String eat(){
+    public String eat() {
         return "Roar!!!!";
     }
-
-}
+} 
